@@ -1,15 +1,6 @@
 import random
 from datetime import datetime as dt
 
-"""
-制表符：
-┌ ┬ ┐
-├ ┼ ┤
-└ ┴ ┘
-│─
-.ljust(16, "\u3000").center(33, "\u3000")
-"""
-
 
 class table:
     def __init__(self) -> None:
@@ -28,16 +19,34 @@ class table:
         print("└" + "─" * 62 + "┘")
 
     def makemenu(menu: list, depth: int):
-        if depth == 3:
+        if depth == 2:
+            prices = []
             for i in range(len(menu)):
-                table.makeline(f"{i+1}.  {menu[i][0][0]}".ljust(16, "\u3000"), 1)
-        elif depth == 2:
-            pass
-        table.makeline(f"{i+2}.{' '*(2-i//8)}随机！！".ljust(16, "\u3000"), 1)
-        table.makendline()
+                parts = menu[i].split()
+                parts[1] = float(parts[1])
+                prices.append(parts)
+                table.makeline(f"{i+1}.{' '*(3-len(str(i+1)))}{parts[0]}".ljust(16, "\u3000") + f"  {str(parts[1]).rjust(6," ")}元\u3000\u3000", 5)
+            table.makeline(f"{i+2}.{' '*(3-len(str(i+2)))}随机！！".ljust(23, "\u3000"), 1)
+            table.makendline()
+            return prices
 
-    def makechoice(start, end):
-        choice = input(f"您的选择是[{start}-{end}]：")
+        else:
+            if depth == 3:
+                for i in range(len(menu)):
+                    table.makeline(f"{i+1}.{' '*(3-len(str(i+1)))}{menu[i][0][0]}".ljust(16, "\u3000"), 1)
+            else:
+                for i in range(len(menu)):
+                    table.makeline(f"{i+1}.{' '*(3-len(str(i+1)))}{menu[i]}".ljust(16, "\u3000"), 1)
+            table.makeline(f"{i+2}.{' '*(3-len(str(i+2)))}随机！！".ljust(16, "\u3000"), 1)
+            table.makendline()
+
+    def makechoice(end):
+        choice = int(input(f"您的选择是[1-{end+1}]："))
+        if choice == end + 1:
+            choice = random.randint(1, end)
+            print("随机选择到：" + str(choice))
+        elif choice not in range(1, end + 1):
+            raise ValueError
         return choice
 
 
@@ -52,29 +61,50 @@ def loadMenu():
     return menu
 
 
-def main():
-    menu = loadMenu()
+def main(menu):
+    # print(menu)
+    bill = []
+    count = 0
     random.seed(int(dt.now().timestamp()))
-    print(menu)
 
     table.makeheadline()
     table.makeline("今天吃什么呢~ ")
     table.makesepline()
     table.makemenu(menu, 3)
-
-    choice = int(table.makechoice(1, 10)) - 1
-    if choice == 9:
-        choice = random.randint(1, 9)
-        print("随机选择到：" + str(choice))
-    elif choice not in range(0, 9):
-        raise ValueError
+    choice1 = table.makechoice(len(menu)) - 1  # 选择大类
 
     table.makeheadline()
-    table.makeline(menu[choice][0][0], -1)
+    table.makeline(menu[choice1][0][0], -1)
     table.makesepline()
-    print(menu[choice])
-    if len(menu[choice]) == 1:
-        pass
+    prices = table.makemenu(menu[choice1][0][1], 2)
+    choice2 = int(table.makechoice(len(menu[choice1][0][1]))) - 1  # 选择菜品
+    dish = prices[choice2][0]
+
+    if len(menu[choice1]) >= 2:  # 选择口味
+        table.makeheadline()
+        table.makeline(menu[choice1][1][0], -1)
+        table.makesepline()
+        table.makemenu(menu[choice1][1][1], 1)
+        choice3 = int(table.makechoice(len(menu[choice1][1][1]))) - 1
+        dish += " " + menu[choice1][1][1][choice3]
+
+        if len(menu[choice1]) == 3:  # 选择基底
+            table.makeheadline()
+            table.makeline(menu[choice1][2][0], -1)
+            table.makesepline()
+            table.makemenu(menu[choice1][2][1], 1)
+            choice4 = int(table.makechoice(len(menu[choice1][2][1]))) - 1
+            dish += " " + menu[choice1][2][1][choice4]
+
+    price = prices[choice2][1]
+    bill.append(dish)
+    count += price
+    if input("还需要继续点单么[y/n]：") == "y":
+        bills, counts = main(menu)
+        bill.extend(bills)
+        count += counts
+
+    return bill, count
 
 
 # while True:
@@ -82,4 +112,5 @@ def main():
 #         main()
 #     except Exception as e:
 #         print(f"{type(e).__name__}: 啊哦，请按照标准格式输入呢~")
-main()
+bill, count = main(loadMenu())
+print(bill, count)
