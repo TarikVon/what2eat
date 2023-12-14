@@ -2,7 +2,7 @@
 
 ## 📝 简介
 
-<!-- <img src="https://www.tarikvon.cn/images/imgHost/20231214172102.png" width="50%"> -->
+<img src="https://www.tarikvon.cn/images/imgHost/20231214172102.png" width="50%">
 
 What to Eat Today? 是一个基于兰州大学某轻食外卖群微信点单的开发的小项目（面向个人，功能较为简单）。由于其麻烦 ~~且及其不友好~~ 的点餐流程，和某人经常要花半个小时来想今天该吃什么 ~~最终还忘记点了~~ 的情况，该项目旨在为用户提供便捷、多样化的餐饮选择，解决日常选择困难症 ~~与懒癌~~ 。
 
