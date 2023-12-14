@@ -22,7 +22,7 @@ class table:
                 parts = menu[i].split()
                 parts[1] = float(parts[1])
                 prices.append(parts)
-                table.makeline(f"{i+1}.{' '*(3-len(str(i+1)))}{parts[0]}".ljust(16, "\u3000") + f"  {str(parts[1]).rjust(6," ")}元\u3000\u3000", 5)
+                table.makeline(f"{i+1}.{' '*(3-len(str(i+1)))}{parts[0]}".ljust(16, "\u3000") + f"  {str(parts[1]).rjust(6,' ')}元\u3000\u3000", 5)
             if end:
                 table.makeline(f"↵.  随机！！".ljust(24, "\u3000"), 1)
                 table.makendline()
@@ -124,8 +124,8 @@ if __name__ == "__main__":
             tel = input("联系电话：")
             print("\n以下是您的订单：\n" + "─" * 64)
             for i in bill:
-                print(i.replace("\u3000"," "))
-            print(f"{count}元\n{time}{"\n" + address if address!="号楼" else ""}{"\n" + tel if tel else ""}")
+                print(i.replace("\u3000", " "))
+            print(f"{count}元\n{time}\n{address if address!='号楼' else ''}\n{ + tel if tel else ''}")
 
     except Exception as e:
         print(f"{type(e).__name__}: 啊哦，请按照标准格式输入呢~")
