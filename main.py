@@ -107,25 +107,25 @@ def main(menu):
 
 
 if __name__ == "__main__":
-    try:
-        bill, count = main(loadmenu())
-        table.makeheadline()
-        table.makeline("账单", -1)
-        table.makesepline()
-        table.makemenu(bill, 1, False)
-        table.makesepline()
-        table.makeline(f"总价：{' '*(4-len(str(count)))}{count}元".ljust(16, "\u3000"), 1)
-        table.makendline()
-        if input("是否生成订单[↵/*]：") == "":
-            time = input("送达时间[↵: 做好即送]：") or "做好即送"
-            address = input("地址[*]号楼：")
-            if not address.endswith("号楼"):
-                address += "号楼"
-            tel = input("联系电话：")
-            print("\n以下是您的订单：\n" + "─" * 64)
-            for i in bill:
-                print(i.replace("\u3000", " "))
-            print(f"{count}元\n{time}\n{address if address!='号楼' else ''}\n{ + tel if tel else ''}")
+    # try:
+    bill, count = main(loadmenu())
+    table.makeheadline()
+    table.makeline("账单", -1)
+    table.makesepline()
+    table.makemenu(bill, 1, False)
+    table.makesepline()
+    table.makeline(f"总价：{' '*(4-len(str(count)))}{count}元".ljust(16, "\u3000"), 1)
+    table.makendline()
+    if input("是否生成订单[↵/*]：") == "":
+        time = input("送达时间[↵: 做好即送]：") or "做好即送"
+        address = input("地址[*]号楼：")
+        if not address.endswith("号楼"):
+            address += "号楼"
+        tel = input("联系电话：")
+        print("\n以下是您的订单：\n" + "─" * 64)
+        for i in bill:
+            print(i.replace("\u3000", " "))
+        print(f"{count}元\n{time}\n{address if address!='号楼' else ''}\n{tel if tel else ''}")
 
-    except Exception as e:
-        print(f"{type(e).__name__}: 啊哦，请按照标准格式输入呢~")
+    # except Exception as e:
+    print(f"{type(e).__name__}: 啊哦，请按照标准格式输入呢~")
