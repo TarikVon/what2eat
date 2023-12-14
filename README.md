@@ -1,4 +1,4 @@
-# 😋 \[v1.2\] What to Eat Today?
+# 😋 \[v1.3\] What to Eat Today?
 
 ## 📝 简介
 
@@ -13,6 +13,16 @@ What to Eat Today? 是一个基于兰州大学某轻食外卖群微信点单的�
 - 一站式挑选菜品：再也不用在公告里面一个一个找啦\~
 - 随机菜单生成：还在因为今天吃什么而烦恼吗？尝尝各种新口味叭\~
 
+💡 一些小技巧：
+
+- 为了让用户操作更加便捷 ~~和让懒狗更懒~~ ，我们设置了用户键入回车的时候进行随机选择，你就可以从头回车到底来快速选择。
+  ⚠️ 但要注意最后填写信息的时候如果选择回车，个人信息就要自己填了！
+- `v1.2` 版本新增了对多重选择的支持，你现在可以在一个类中同时选择多项了： ~~长期爽食！！~~
+
+  <img src="https://www.tarikvon.cn/images/imgHost/20231214171612.png" width="50%"><img src="https://www.tarikvon.cn/images/imgHost/20231214172035.png" width="50%">
+
+  注：`0` 与 `↵` 同义，例如图中最后一个 `0` 代表该菜品随机选择。
+
 ## 📘 如何使用？
 
 ### 🌐 网站在线使用：
@@ -25,7 +35,7 @@ What to Eat Today? 是一个基于兰州大学某轻食外卖群微信点单的�
 1. 📥 克隆本项目到本地：
 
    1.1 在线下载（推荐）：
-   [what2eat.zip](https://www.tarikvon.cn/files/what2eat.zip)
+   [what2eat](https://www.tarikvon.cn/files/what2eat-1.3.zip)
 
    1.2 克隆仓库（需要安装 git）：
 
@@ -40,14 +50,6 @@ What to Eat Today? 是一个基于兰州大学某轻食外卖群微信点单的�
    cd what2eat # 此处可替换为其他路径，这里打开 ./what2eat/ 文件夹
    python main.py
    ```
-
-3. 💡 一些小技巧：
-
-   1. 为了让用户操作更加便捷 ~~和让懒狗更懒~~ ，我们设置了用户键入回车的时候进行随机选择，你就可以从头回车到底来快速选择。
-      ⚠️ 但要注意最后填写信息的时候如果选择回车，个人信息就要自己填了！
-   2. `v1.2` 版本新增了对多重选择的支持，你现在可以在一个类中同时选择多项了： ~~长期爽食！！~~
-
-      <img src="https://www.tarikvon.cn/images/imgHost/20231214171612.png" width="50%"><img src="https://www.tarikvon.cn/images/imgHost/20231214172035.png" width="50%">
 
 ## 📚 技术栈
 
