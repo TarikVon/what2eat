@@ -34,15 +34,15 @@ What to Eat Today? 是一个基于兰州大学某轻食外卖群微信点单的�
 
 1. 📥 克隆本项目到本地：
 
-   1.1 在线下载（推荐）：
-   [what2eat](https://www.tarikvon.cn/files/what2eat-1.3.zip)
+   1. 在线下载（推荐）：
+      [what2eat](https://www.tarikvon.cn/files/what2eat-1.3.zip)
 
-   1.2 克隆仓库（需要安装 git）：
+   2. 克隆仓库（需要安装 git）：
 
-   ```bash
-   cd Desktop # 此处可替换为其他路径，这里放到桌面
-   git clone https://github.com/TarikVon/what2eat.git
-   ```
+      ```bash
+      cd Desktop # 此处可替换为其他路径，这里放到桌面
+      git clone https://github.com/TarikVon/what2eat.git
+      ```
 
 2. ▶️ 运行程序：
 
