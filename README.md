@@ -2,7 +2,7 @@
 
 ## 📝 简介
 
-<img src="https://www.tarikvon.cn/images/imgHost/20231214172102.png" width="50%">
+<img src="https://www.tarikvon.cn/images/deployments/20231214172102.png" width="50%">
 
 What to Eat Today? 是一个基于兰州大学某轻食外卖群微信点单的开发的小项目（面向个人，功能较为简单）。由于其麻烦 ~~且及其不友好~~ 的点餐流程，和某人经常要花半个小时来想今天该吃什么 ~~最终还忘记点了~~ 的情况，该项目旨在为用户提供便捷、多样化的餐饮选择，解决日常选择困难症 ~~与懒癌~~ 。
 
@@ -19,7 +19,7 @@ What to Eat Today? 是一个基于兰州大学某轻食外卖群微信点单的�
   ⚠️ 但要注意最后填写信息的时候如果选择回车，个人信息就要自己填了！
 - `v1.2` 版本新增了对多重选择的支持，你现在可以在一个类中同时选择多项了： ~~长期爽食！！~~
 
-  <img src="https://www.tarikvon.cn/images/imgHost/20231214171612.png" width="50%"><img src="https://www.tarikvon.cn/images/imgHost/20231214172035.png" width="50%">
+  <img src="https://www.tarikvon.cn/images/deployments/20231214171612.png" width="50%"><img src="https://www.tarikvon.cn/images/deployments/20231214172035.png" width="50%">
 
   注：`0` 与 `↵` 同义，例如图中最后一个 `0` 代表该菜品随机选择。
 
